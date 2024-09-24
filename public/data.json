@@ -1,0 +1,167 @@
+[
+    {
+        "id": 1,
+        "ChemicalName": "Water",
+        "Vendor": "Vendor A",
+        "Density": 1.0,
+        "Viscosity": 0.89,
+        "Packaging": "Bottle",
+        "PackSize": "1L",
+        "Unit": "L",
+        "Quantity": 100
+    },
+    {
+        "id": 2,
+        "ChemicalName": "Ethanol",
+        "Vendor": "Vendor B",
+        "Density": 0.789,
+        "Viscosity": 1.2,
+        "Packaging": "Can",
+        "PackSize": "500ml",
+        "Unit": "L",
+        "Quantity": 200
+    },
+    {
+        "id": 3,
+        "ChemicalName": "Acetone",
+        "Vendor": "Vendor C",
+        "Density": 0.784,
+        "Viscosity": 0.32,
+        "Packaging": "Bottle",
+        "PackSize": "1L",
+        "Unit": "L",
+        "Quantity": 150
+    },
+    {
+        "id": 4,
+        "ChemicalName": "Sodium Chloride",
+        "Vendor": "Vendor D",
+        "Density": 2.16,
+        "Viscosity": 0.5,
+        "Packaging": "Bag",
+        "PackSize": "5kg",
+        "Unit": "kg",
+        "Quantity": 75
+    },
+    {
+        "id": 5,
+        "ChemicalName": "Hydrochloric Acid",
+        "Vendor": "Vendor E",
+        "Density": 1.18,
+        "Viscosity": 1.0,
+        "Packaging": "Bottle",
+        "PackSize": "500ml",
+        "Unit": "L",
+        "Quantity": 50
+    },
+    {
+        "id": 6,
+        "ChemicalName": "Sodium Bicarbonate",
+        "Vendor": "Vendor F",
+        "Density": 2.20,
+        "Viscosity": 0.1,
+        "Packaging": "Box",
+        "PackSize": "1kg",
+        "Unit": "kg",
+        "Quantity": 100
+    },
+    {
+        "id": 7,
+        "ChemicalName": "Sulfuric Acid",
+        "Vendor": "Vendor G",
+        "Density": 1.84,
+        "Viscosity": 18.1,
+        "Packaging": "Drum",
+        "PackSize": "25L",
+        "Unit": "L",
+        "Quantity": 20
+    },
+    {
+        "id": 8,
+        "ChemicalName": "Acetic Acid",
+        "Vendor": "Vendor H",
+        "Density": 1.05,
+        "Viscosity": 0.93,
+        "Packaging": "Bottle",
+        "PackSize": "1L",
+        "Unit": "L",
+        "Quantity": 60
+    },
+    {
+        "id": 9,
+        "ChemicalName": "Benzene",
+        "Vendor": "Vendor I",
+        "Density": 0.876,
+        "Viscosity": 0.65,
+        "Packaging": "Can",
+        "PackSize": "1L",
+        "Unit": "L",
+        "Quantity": 80
+    },
+    {
+        "id": 10,
+        "ChemicalName": "Methanol",
+        "Vendor": "Vendor J",
+        "Density": 0.791,
+        "Viscosity": 0.59,
+        "Packaging": "Bottle",
+        "PackSize": "1L",
+        "Unit": "L",
+        "Quantity": 90
+    },
+    {
+        "id": 11,
+        "ChemicalName": "Chloroform",
+        "Vendor": "Vendor K",
+        "Density": 1.48,
+        "Viscosity": 0.56,
+        "Packaging": "Bottle",
+        "PackSize": "500ml",
+        "Unit": "L",
+        "Quantity": 30
+    },
+    {
+        "id": 12,
+        "ChemicalName": "Hexane",
+        "Vendor": "Vendor L",
+        "Density": 0.654,
+        "Viscosity": 0.36,
+        "Packaging": "Drum",
+        "PackSize": "20L",
+        "Unit": "L",
+        "Quantity": 40
+    },
+    {
+        "id": 13,
+        "ChemicalName": "Toluene",
+        "Vendor": "Vendor M",
+        "Density": 0.866,
+        "Viscosity": 0.59,
+        "Packaging": "Bottle",
+        "PackSize": "1L",
+        "Unit": "L",
+        "Quantity": 70
+    },
+    {
+        "id": 14,
+        "ChemicalName": "Glycerol",
+        "Vendor": "Vendor N",
+        "Density": 1.26,
+        "Viscosity": 1.5,
+        "Packaging": "Bottle",
+        "PackSize": "500ml",
+        "Unit": "L",
+        "Quantity": 50
+    },
+    {
+        "id": 15,
+        "ChemicalName": "Nitric Acid",
+        "Vendor": "Vendor O",
+        "Density": 1.42,
+        "Viscosity": 1.2,
+        "Packaging": "Bottle",
+        "PackSize": "1L",
+        "Unit": "L",
+        "Quantity": 30
+    }
+]
