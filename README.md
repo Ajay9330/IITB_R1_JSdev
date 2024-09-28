@@ -3,6 +3,7 @@
 This project have features **Custom Table with Controls** and **Overlay Module**. It allows dynamic table creation from fetched data and provides interactive overlays for notifications. Built with HTML, CSS, and JavaScript—no external dependencies.
 
 # Project Link: [Cick Here](https://chem-manage.onrender.com/)
+![alt text](image.png)
 
 ## Features
 
@@ -19,7 +20,7 @@ This project have features **Custom Table with Controls** and **Overlay Module**
 - **Responsive Design**: Responsive Design for small and large screen devices
 
 ## Example of Use
-- import table modlue and css
+- import table module and CSS
 ```html
     <!-- importing css of self-made modules -->
     <link rel="stylesheet" href="./table_modules/table.css">
