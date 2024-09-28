@@ -45,13 +45,14 @@
 }
 .customOverlay .popup div{
     display: flex;
-    /* justify-content: center; */
+    justify-content: space-around;
     align-items: center;
     gap: 51px;
     font-weight: 800;
 }
 .customOverlay .popup div:last-child{
     min-width: 100%;
+
 }
 
 .customOverlay .buttons {

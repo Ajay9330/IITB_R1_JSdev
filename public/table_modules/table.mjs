@@ -135,6 +135,10 @@ class CustomTable {
 
         } else if (eventType == 'delete') {
             elem.addEventListener('click', () => {
+                if(this.selectedRowsCount==0){
+                    this.overlay.showPopup("Please select rows to delete");
+                    return;
+                }
                 this.overlay.getConfirmation(`Do you want to Delete ${this.selectedRowsCount} rows`,"Yes","No",()=>this.deleteSelectedRows());
             })
         } else if (eventType == 'refresh') {

@@ -2,7 +2,7 @@
 
 This project have features **Custom Table with Controls** and **Overlay Module**. It allows dynamic table creation from fetched data and provides interactive overlays for notifications. Built with HTML, CSS, and JavaScript—no external dependencies.
 
-# Project Link: [Cick Here](https://chem-manage.onrender.com/)
+# Project Link: [Click Here](https://chem-manage.onrender.com/)
 ![alt text](image.png)
 
 ## Features
@@ -62,7 +62,7 @@ window.onload=function(){
 
 ```javascript
 const table = new CustomTable(parentElement, inputData, inputHeaders);
-//constructor CustomTable(parentElement: domElement, inputata: Array(Obj), headers: Array(string)): CustomTable
+//constructor CustomTable(parentElement: domElement, inputata: Array(Object), headers: Array(String)): CustomTable
 ```
 
 ### 2. Overlay()
@@ -70,15 +70,15 @@ const table = new CustomTable(parentElement, inputData, inputHeaders);
 const overlayObj=new Overlay();
 // you can call follwing method of overlay
 
-// (method) Overlay.showPopup(message: string): void
+// (method) Overlay.showPopup(message: String): void
 
-// (method) Overlay.getConfirmation(message: string, confirmText: string , cancelText: string , deleteFunction: function): void
+// (method) Overlay.getConfirmation(message: String, confirmText: String , cancelText: String , deleteFunction: function): void
 
-// (method) Overlay.getEditResponse(message: any, nameValueObj: any, callback: any): void
+// (method) Overlay.getEditResponse(message: Stirng, nameValueObj: Object, callback: function): void
 
-//(method) Overlay.getAddResponse(message: string, headers: Array(string), callback: function): void
+//(method) Overlay.getAddResponse(message: String, headers: Array(string), callback: function): void
 
-// (property) Overlay.popupCount: number
+// (property) Overlay.popupCount: Number
 ```
 
 ## References
