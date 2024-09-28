@@ -12,8 +12,8 @@
     transition: background-color 50ms, color 10ms; 
 }
 body{
-    min-height: 100vh;
-    max-height: 100vh;
+    min-height: 100svh;
+    max-height: 100svh;
     overflow: hidden;
 }
 
@@ -39,8 +39,8 @@ header span{
 
 main{
     margin: 55px 0px 0px 0px;
-    height: 100vh;
-    max-height:calc(100vh - 100px);
+    height: 100svh;
+    max-height:calc(100svh - 100px);
     overflow: auto;
 }
 

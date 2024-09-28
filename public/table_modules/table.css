@@ -19,7 +19,7 @@
     display: flex;
     min-height: 100%;
     overflow: auto;
-    max-height: calc(100vh - 100px);
+    max-height: calc(100svh - 100px);
     border: 1px solid #070707ad;
     box-sizing: border-box;
     flex-direction: column;
@@ -52,11 +52,6 @@
     border-radius: 5px;
     cursor: pointer;
     display: flex;
-}
-
-.controls span:hover {
-    box-shadow: 1px 1px 6px 2px var(--white-1);
-    transform: scale(1.03);
 }
 
 .controls span:active {
@@ -145,13 +140,15 @@
     background-color: var(--highlightrow);
 }
 
-.datatable tbody tr:hover {
-    background-color: #c4e98e;
-}
 
-@media (width<700) {
+
+@media only screen and (min-width: 600px) {
+
+    .datatable tbody tr:hover {
+        background-color: #c4e98e;
+    }
     .controls span:hover {
-        box-shadow: none;
-        transform: none;
+        box-shadow: 1px 1px 6px 2px var(--white-1);
+        transform: scale(1.03);
     }
 }

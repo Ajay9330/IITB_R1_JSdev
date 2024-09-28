@@ -81,7 +81,7 @@ const overlayObj=new Overlay();
 // (property) Overlay.popupCount: Number
 ```
 
-## References
+
 
 ## References
 
