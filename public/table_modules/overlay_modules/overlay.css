@@ -1,0 +1,79 @@
+.customOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s ease;
+}
+
+.customOverlay.visible {
+    position: fixed;
+    top: 0;
+    visibility: visible;
+    opacity: 1;
+}
+
+.customOverlay .popup {
+    position: fixed;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    width: 90%;
+}
+
+.customOverlay h2 {
+    margin: 0 0 20px 0;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.customOverlay .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.customOverlay button {
+    width: fit-content;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.customOverlay button:hover {
+    background-color: #0056b3;
+}
+
+.customOverlay input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.customOverlay input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.customOverlay .messageBox {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    align-items: center;
+}

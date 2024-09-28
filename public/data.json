@@ -6,18 +6,14 @@
         "Density": 1.0,
         "Viscosity": 0.89,
         "Packaging": "Bottle",
-        "PackSize": "1L",
+        "PackSize": "9",
         "Unit": "L",
         "Quantity": 100
     },
     {
-        "id": 2,
-        "ChemicalName": "Ethanol",
-        "Vendor": "Vendor B",
-        "Density": 0.789,
         "Viscosity": 1.2,
         "Packaging": "Can",
-        "PackSize": "500ml",
+        "PackSize": "50",
         "Unit": "L",
         "Quantity": 200
     },
@@ -28,7 +24,7 @@
         "Density": 0.784,
         "Viscosity": 0.32,
         "Packaging": "Bottle",
-        "PackSize": "1L",
+        "PackSize": "6",
         "Unit": "L",
         "Quantity": 150
     },
@@ -39,18 +35,14 @@
         "Density": 2.16,
         "Viscosity": 0.5,
         "Packaging": "Bag",
-        "PackSize": "5kg",
+        "PackSize": "5",
         "Unit": "kg",
         "Quantity": 75
     },
     {
-        "id": 5,
-        "ChemicalName": "Hydrochloric Acid",
-        "Vendor": "Vendor E",
-        "Density": 1.18,
-        "Viscosity": 1.0,
+     
         "Packaging": "Bottle",
-        "PackSize": "500ml",
+        "PackSize": "100",
         "Unit": "L",
         "Quantity": 50
     },
@@ -61,7 +53,7 @@
         "Density": 2.20,
         "Viscosity": 0.1,
         "Packaging": "Box",
-        "PackSize": "1kg",
+        "PackSize": "13",
         "Unit": "kg",
         "Quantity": 100
     },
@@ -72,7 +64,7 @@
         "Density": 1.84,
         "Viscosity": 18.1,
         "Packaging": "Drum",
-        "PackSize": "25L",
+        "PackSize": "2",
         "Unit": "L",
         "Quantity": 20
     },
@@ -83,7 +75,7 @@
         "Density": 1.05,
         "Viscosity": 0.93,
         "Packaging": "Bottle",
-        "PackSize": "1L",
+        "PackSize": "5",
         "Unit": "L",
         "Quantity": 60
     },
@@ -94,7 +86,7 @@
         "Density": 0.876,
         "Viscosity": 0.65,
         "Packaging": "Can",
-        "PackSize": "1L",
+        "PackSize": "30",
         "Unit": "L",
         "Quantity": 80
     },
@@ -105,7 +97,7 @@
         "Density": 0.791,
         "Viscosity": 0.59,
         "Packaging": "Bottle",
-        "PackSize": "1L",
+        "PackSize": "4",
         "Unit": "L",
         "Quantity": 90
     },
@@ -116,7 +108,7 @@
         "Density": 1.48,
         "Viscosity": 0.56,
         "Packaging": "Bottle",
-        "PackSize": "500ml",
+        "PackSize": "500",
         "Unit": "L",
         "Quantity": 30
     },
@@ -127,7 +119,7 @@
         "Density": 0.654,
         "Viscosity": 0.36,
         "Packaging": "Drum",
-        "PackSize": "20L",
+        "PackSize": "2",
         "Unit": "L",
         "Quantity": 40
     },
@@ -138,7 +130,7 @@
         "Density": 0.866,
         "Viscosity": 0.59,
         "Packaging": "Bottle",
-        "PackSize": "1L",
+        "PackSize": "9",
         "Unit": "L",
         "Quantity": 70
     },
@@ -149,7 +141,7 @@
         "Density": 1.26,
         "Viscosity": 1.5,
         "Packaging": "Bottle",
-        "PackSize": "500ml",
+        "PackSize": "13",
         "Unit": "L",
         "Quantity": 50
     },
@@ -160,7 +152,7 @@
         "Density": 1.42,
         "Viscosity": 1.2,
         "Packaging": "Bottle",
-        "PackSize": "1L",
+        "PackSize": "3",
         "Unit": "L",
         "Quantity": 30
     }
