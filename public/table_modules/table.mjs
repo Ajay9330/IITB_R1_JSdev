@@ -10,12 +10,13 @@ const controlImg = [
     { name: 'save', value: `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M840-680v480q0 33-23.5 56.5T760-120H200q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h480l160 160Zm-80 34L646-760H200v560h560v-446ZM480-240q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35ZM240-560h360v-160H240v160Zm-40-86v446-560 114Z"/></svg>` }
 ];
 
-
+new Cu
 class CustomTable {
     selectedColumn = -1;
     selectedRows = {};
-
+    selectedRowsCount=0;
     overlay = new Overlay()
+    
     constructor(parentElement, inputata, headers) {
         this.headers = headers;
         this.data = this.cleanData(inputata);
@@ -32,6 +33,7 @@ class CustomTable {
         this.renderTableBody();
     }
     reset() {
+        this.selectedRowsCount=0;
         this.data = this.originalData;
         this.selectedColumn = -1;
         this.data.forEach(item => {
@@ -39,6 +41,7 @@ class CustomTable {
         });
         this.renderTableHead()
         this.renderTableBody()
+        this.sortTable('id')
     }
     cleanData(data) {
         let cleanedData = data.map((x, idx) => {
@@ -92,20 +95,57 @@ class CustomTable {
             elem.addEventListener('click', () => {
                 this.sortTable(this.selectedColumn);
             })
-        } else if (eventType == 'add') {
-
         } else if (eventType == 'edit') {
+            elem.addEventListener('click', () => {
+                if(this.selectedRowsCount>1){
+                    this.overlay.showPopup("Please Select only 1 single row for edit");
+                    return;
+                }
+                let selecteIndex=-1;
+                this.data.forEach((x,i)=>{
+                    if(this.selectedRows[x.tableRowId]===true){
+                        selecteIndex=i;
+                    }
+                });
+                if(selecteIndex==-1){
+                    this.overlay.showPopup("Please Select a row for edit");
+                    return;
+                }
+                let selectedRow = this.data[selecteIndex];
+                if (selectedRow) {
+                    this.overlay.getEditResponse("Edit Item", selectedRow, (response) => {
+                        this.data[selecteIndex]=response;
+                        this.renderTableBody();
+                    });
+                }
+            });
+
+        } else if (eventType == 'add') {
+            elem.addEventListener('click', () => {
+               
+                this.overlay.getAddResponse("Add New Item", this.headers, (response) => {
+                    response["tableRowId"]=String(Math.random()*1000);
+                    this.headers.forEach(head=>{
+                      response[head]=response[head]||"N/A"
+                    })
+                    this.selectedRows[response.tableRowId]=false
+                    this.data.push(response);
+                    this.renderTableBody();
+                });
+            });
 
         } else if (eventType == 'delete') {
             elem.addEventListener('click', () => {
-                this.deleteSelectedRows();
+                this.overlay.getConfirmation(`Do you want to Delete ${this.selectedRowsCount} rows`,"Yes","No",()=>this.deleteSelectedRows());
             })
         } else if (eventType == 'refresh') {
             elem.addEventListener('click', () => {
                 this.reset();
             })
         } else if (eventType == 'save') {
-
+            elem.addEventListener('click',()=>{
+                this.overlay.showPopup("Data Saved. in this callback you can pass the function to save data on some endpoints")
+            })
         } else {
             console.error("control event not mached");
         }
@@ -158,6 +198,11 @@ class CustomTable {
     }
     toggleRowSelection(id, elem) {
         if (this.selectedRows.hasOwnProperty(id)) {
+            if(this.selectedRows[id]==true){
+                this.selectedRowsCount--;
+            }else{
+                this.selectedRowsCount++;
+            }
             this.selectedRows[id] = Boolean(!this.selectedRows[id]);
             elem.parentElement.parentElement.classList.toggle('activeRow');
         }
@@ -167,19 +212,19 @@ class CustomTable {
         let selected = Object.keys(this.selectedRows).filter(key => this.selectedRows[key]);
         if (selected.length == 0) {
             this.overlay.showPopup("Select one or more rows to delete")
+            return;
         }
+        this.data = this.data.filter(obj => this.selectedRows[obj.tableRowId] === false);
         selected.forEach(key => {
             delete this.selectedRows[key];
         })
-        this.data = this.data.filter(obj => this.selectedRows[obj.tableRowId] === false);
 
         Array.from(this.tableBody.children).forEach(elem => {
             if (elem.classList.contains('activeRow')) {
                 elem.remove();
             }
         })
-
-        // this.renderTableBody(); 
+        this.selectedRowsCount=0;
     }
     renderTableHead() {
         this.tableHead.innerHTML = '';
@@ -225,6 +270,8 @@ class CustomTable {
     }
 
 }
+
+//attaching the Constructers to window object for global access
 window.CustomTable = CustomTable;
 window.Overlay = Overlay;
 

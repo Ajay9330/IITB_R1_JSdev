@@ -27,13 +27,21 @@ class Overlay {
         button.onclick = onClick;
         return button;
     }
-    #createInputField(name) {
+    #createInputField(name, val) {
+        const container = document.createElement('div');
+        const label = document.createElement("label");
+        label.textContent = name;
         const inputField = document.createElement('input');
         inputField.placeholder = name;
-        return inputField;
+        inputField.value = val;
+        
+        container.appendChild(label);
+        container.appendChild(inputField);
+        
+        return container; 
     }
     #clearOverlay() {
-        if (this.popupCount == 1) {
+        if (this.popupCount === 1) {
             this.overlay.classList.toggle('hidden');
             this.overlay.classList.toggle('visible');
         }
@@ -63,7 +71,7 @@ class Overlay {
         this.overlay.appendChild(fragment);
     }
 
-    getConfirmation(message, confirmText = "Yes", cancelText = "No") {
+    getConfirmation(message, confirmText = "Yes", cancelText = "No", callBack) {
         this.#shoOverlay();
         const fragment = document.createDocumentFragment();
         const wrapper = this.#createWrapper("confirmationBox");
@@ -71,6 +79,7 @@ class Overlay {
         const confirmButton = this.#createButton(confirmText, () => {
             this.overlay.removeChild(wrapper);
             this.#clearOverlay();
+            callBack();
             console.log('User confirmed');
         });
 
@@ -88,7 +97,7 @@ class Overlay {
         this.overlay.appendChild(fragment);
     }
 
-    getEditResponse(message, nameValueObjArr) {
+    getEditResponse(message, nameValueObj, callback) {
         this.#shoOverlay();
         const fragment = document.createDocumentFragment();
         const wrapper = this.#createWrapper("editBox");
@@ -96,11 +105,14 @@ class Overlay {
         wrapper.appendChild(this.#createMessageElement(message));
 
         const inputFields = {};
-        nameValueObjArr.forEach(({ name }) => {
-            const inputField = this.#createInputField(name);
-            wrapper.appendChild(inputField);
-            inputFields[name] = inputField;
-        });
+        for (let [key, val] of Object.entries(nameValueObj)) {
+            const inputFieldContainer = this.#createInputField(key, val);
+            if (key === 'id' || key === 'tableRowId') {
+                inputFieldContainer.querySelector('input').readOnly = true;
+            }
+            wrapper.appendChild(inputFieldContainer);
+            inputFields[key] = inputFieldContainer.querySelector('input');
+        }
 
         const confirmButton = this.#createButton("Save", () => {
             const response = {};
@@ -109,16 +121,60 @@ class Overlay {
             }
             this.overlay.removeChild(wrapper);
             this.#clearOverlay();
+            callback(response);
             console.log('Edited Values:', response);
+        });
+
+        const cancelButton = this.#createButton("Cancel", () => {
+            this.overlay.removeChild(wrapper);
+            this.#clearOverlay();
+            console.log('Edit canceled');
         });
 
         const buttonContainer = document.createElement('div');
         buttonContainer.className = 'buttons';
-        buttonContainer.appendChild(confirmButton);
+        buttonContainer.append(confirmButton, cancelButton);
         wrapper.appendChild(buttonContainer);
         this.overlay.appendChild(fragment);
     }
 
+    getAddResponse(message, headers, callback) {
+        this.#shoOverlay();
+        const fragment = document.createDocumentFragment();
+        const wrapper = this.#createWrapper("addBox");
+        fragment.appendChild(wrapper);
+        wrapper.appendChild(this.#createMessageElement(message));
+
+        const inputFields = {};
+        headers.forEach((name) => {
+            const inputFieldContainer = this.#createInputField(name, '');
+            wrapper.appendChild(inputFieldContainer);
+            inputFields[name] = inputFieldContainer.querySelector('input');
+        });
+
+        const confirmButton = this.#createButton("Add", () => {
+            const response = {};
+            for (const name in inputFields) {
+                response[name] = inputFields[name].value;
+            }
+            this.overlay.removeChild(wrapper);
+            this.#clearOverlay();
+            callback(response);
+            console.log('Added Values:', response);
+        });
+
+        const cancelButton = this.#createButton("Cancel", () => {
+            this.overlay.removeChild(wrapper);
+            this.#clearOverlay();
+            console.log('Add canceled');
+        });
+
+        const buttonContainer = document.createElement('div');
+        buttonContainer.className = 'buttons';
+        buttonContainer.append(confirmButton, cancelButton);
+        wrapper.appendChild(buttonContainer);
+        this.overlay.appendChild(fragment);
+    }
 }
 
 export default Overlay;

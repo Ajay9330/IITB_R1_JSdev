@@ -6,8 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chem_Vender_Management</title>
     <link rel="stylesheet" href="./styles.css" />
+    
+    <!-- importing css of self-made modules -->
     <link rel="stylesheet" href="./table_modules/table.css">
     <link rel="stylesheet" href="./table_modules/overlay_modules/overlay.css">
+
+    <!-- importing js of self-made table module -->
+    <script src="./table_modules/table.mjs" type="module"></script>
+
+    <!-- importing main script for creating table -->
+    <script src="main.js"></script>
 
 </head>
 
@@ -21,17 +29,16 @@
 
     <!-- main -->
     <main>
+
+        <!-- this is element where table will get render -->
         <div id="table1"></div>
+
     </main>
 
     <footer>
         <span>Made by <a href="https://github.com/ajay9330">Ajaykumar Yadav</a></span>
         <span>Thank You!</span>
     </footer>
-    
-    <script src="./table_modules/table.mjs" type="module">
-    </script>
-    <script src="main.js"></script>
 
 </body>
 

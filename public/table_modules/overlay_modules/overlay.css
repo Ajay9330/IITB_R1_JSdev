@@ -29,12 +29,29 @@
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     max-width: 400px;
     width: 90%;
+    max-height: 50vh;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 23px;
 }
 
 .customOverlay h2 {
+    flex: 1;
+    min-width: 100%;
     margin: 0 0 20px 0;
     font-size: 1.5em;
     text-align: center;
+}
+.customOverlay .popup div{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 51px;
+    font-weight: 800;
+}
+.customOverlay .popup div:last-child{
+    min-width: 100%;
 }
 
 .customOverlay .buttons {
@@ -59,9 +76,9 @@
 }
 
 .customOverlay input {
-    width: calc(100% - 20px);
+    /* width: calc(100% - 20px); */
     padding: 10px;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     border: 1px solid #ccc;
     border-radius: 4px;
 }
