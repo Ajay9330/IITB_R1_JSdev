@@ -154,4 +154,7 @@
         box-shadow: none;
         transform: none;
     }
+    .datatable tbody tr:hover{
+        background-color: transparent;
+    }
 }
