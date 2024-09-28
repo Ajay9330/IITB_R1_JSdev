@@ -11,6 +11,10 @@
         "Quantity": 100
     },
     {
+        "id": 2,
+        "ChemicalName": "Unknown Chemical",
+        "Vendor": "Vendor B",
+        "Density": null,
         "Viscosity": 1.2,
         "Packaging": "Can",
         "PackSize": "50",
@@ -40,7 +44,11 @@
         "Quantity": 75
     },
     {
-     
+        "id": 5,
+        "ChemicalName": "Unknown Chemical",
+        "Vendor": "Vendor E",
+        "Density": null,
+        "Viscosity": null,
         "Packaging": "Bottle",
         "PackSize": "100",
         "Unit": "L",

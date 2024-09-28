@@ -1,6 +1,5 @@
 
 window.onload=function(){
-    // alert("h")
     async function fetchDataAndBuildTable(){
         const inputata=await fetch('data.json').then(d=>d.json());
         console.log(inputata)
@@ -11,16 +10,6 @@ window.onload=function(){
     };
     fetchDataAndBuildTable();
 
- 
+
 }
-
-
-    // overlay.getEditResponse('Please edit your details:', [
-    //     { name: 'Name' },
-    //     { name: 'Class' }
-    // ]);
-
-
-// Example for confirmation
-    // overlay.getConfirmation('Are you sure you want to proceed?');
 
